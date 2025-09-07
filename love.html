@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Note for Harshu</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: linear-gradient(to top, #ff9a9e, #fad0c4);
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+      padding: 50px;
+    }
+
+    #love-note {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 20px;
+      padding: 30px;
+      display: inline-block;
+      font-size: 1.5em;
+      line-height: 1.6;
+      max-width: 600px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    button {
+      margin-top: 30px;
+      padding: 10px 20px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #ff0066;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff3399;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: floatHeart 6s linear infinite;
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+
+    .heart:before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart:after {
+      left: 10px;
+      top: 0;
+    }
+
+    @keyframes floatHeart {
+      0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div id="love-note">
+    <p>My Love 🫂💖</p>
+    <p>16 Nov se humari journey start hui… aur ab tu meri world ban gayi 😍.<br>
+    Tera smile, tera care, tera trust… sab mere liye priceless hai ❤️.<br>
+    Jab tu “Love You Too” boli… bas meri duniya bright ho gayi 😳💫.<br>
+    Tu meri princess, meri dream come true 🌝💋.</p>
+    <p>Happy Birthday My Jaan! I Love Youuuu 😘💖</p>
+  </div>
+
+  <button onclick="location.href='index.html'">Back to Balloons 🎈</button>
+
+  <script>
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * window.innerWidth + 'px';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 8000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>
